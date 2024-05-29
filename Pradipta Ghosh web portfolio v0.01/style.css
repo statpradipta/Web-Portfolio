@@ -171,8 +171,8 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 500px;
-  width: 500px;
+  height: 275px;
+  width: 275px;
   margin: auto 0;
 }
 
@@ -357,6 +357,7 @@ article .icon {
 
 #projects {
   position: relative;
+  margin-bottom: 250px;
 }
 
 .color-container {
@@ -381,8 +382,14 @@ article .icon {
 }
 /* CERTIFICATION */
 #certifications {
-  padding: 50px 0;
-  text-align: center;
+  position: relative;
+ display: flex;
+   justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;  
 }
 
 .certifications-container {
