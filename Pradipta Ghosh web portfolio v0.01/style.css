@@ -379,6 +379,45 @@ article .icon {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+/* CERTIFICATION */
+#certifications {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.details-container {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.details-container img.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.details-container h3 {
+  margin: 10px 0 5px;
+}
+
+.details-container p {
+  margin: 5px 0;
+}
+
+.details-container a {
+  color: #3498db;
+  text-decoration: none;
+}
 
 /* CONTACT */
 
