@@ -390,6 +390,8 @@ article .icon {
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;  
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .certifications-container {
