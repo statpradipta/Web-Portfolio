@@ -488,13 +488,6 @@ footer p {
     overflow-x: hidden; /* Prevent horizontal scroll */
   }
 
-  section {
-    padding: 20px; /* Adjust padding for sections */
-    margin: 0; /* Remove extra margin */
-    width: 100%; /* Ensure sections take full width */
-    box-sizing: border-box;
-  }
-
   #certifications {
     padding: 20px; /* Adjust padding */
     margin: 0; /* Remove extra margin */
@@ -534,12 +527,6 @@ footer p {
 
 /* Adjustments for even smaller screens */
 @media (max-width: 480px) {
-  section {
-    padding: 20px; /* Adjust padding for sections */
-    margin: 0; /* Remove extra margin */
-    width: 100%; /* Ensure full width */
-    box-sizing: border-box;
-  }
   
   #certifications {
     padding: 10px; /* Adjust padding */
