@@ -478,13 +478,7 @@ footer {
 footer p {
   text-align: center;
 }
-/* General adjustments for all elements to prevent overflow */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
