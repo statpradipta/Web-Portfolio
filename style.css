@@ -478,6 +478,14 @@ footer {
 footer p {
   text-align: center;
 }
+/* General adjustments for all elements to prevent overflow */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   body {
@@ -487,7 +495,7 @@ footer p {
   }
 
   section {
-    padding: 40px 20px; /* Adjust padding for sections */
+    padding: 20px; /* Adjust padding for sections */
     margin: 0; /* Remove extra margin */
     width: 100%; /* Ensure sections take full width */
     box-sizing: border-box;
@@ -507,8 +515,9 @@ footer p {
   }
   
   .details-container {
-    width: 90%; /* Take almost full width on mobile */
+    width: calc(100% - 40px); /* Full width minus padding */
     margin: 10px 0; /* Space between cards */
+    box-sizing: border-box;
   }
 
   .details-container img.icon {
@@ -532,7 +541,7 @@ footer p {
 /* Adjustments for even smaller screens */
 @media (max-width: 480px) {
   section {
-    padding: 30px 10px; /* Adjust padding for sections */
+    padding: 20px; /* Adjust padding for sections */
     margin: 0; /* Remove extra margin */
     width: 100%; /* Ensure full width */
     box-sizing: border-box;
@@ -551,7 +560,7 @@ footer p {
   }
   
   .details-container {
-    width: 100%; /* Full width on mobile */
+    width: calc(100% - 20px); /* Full width minus padding */
     margin-bottom: 15px; /* Space between cards */
     box-sizing: border-box;
   }
