@@ -478,3 +478,83 @@ footer {
 footer p {
   text-align: center;
 }
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+    margin: 0 5%;
+  }
+  
+  #certifications {
+    padding: 60px 0;
+    margin: 0 5%;
+  }
+
+  .certifications-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Adjust card spacing and size */
+  .details-container {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .details-container img.icon {
+    width: 40px; /* Adjust icon size */
+    height: 40px; /* Adjust icon size */
+  }
+
+  .details-container h3 {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .details-container p {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .details-container a {
+    font-size: 1rem; /* Adjust font size */
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 480px) {
+  section {
+    padding: 30px 0;
+    margin: 0 2.5%;
+  }
+  
+  #certifications {
+    padding: 50px 0;
+    margin: 0 2.5%;
+  }
+  
+  .certifications-container {
+    gap: 15px;
+  }
+  
+  /* Further adjustments if needed */
+  .details-container {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 15px; /* Space between cards */
+  }
+  
+  .details-container img.icon {
+    width: 30px; /* Adjust icon size */
+    height: 30px; /* Adjust icon size */
+  }
+
+  .details-container h3 {
+    font-size: 1.25rem; /* Adjust font size */
+  }
+
+  .details-container p {
+    font-size: 0.875rem; /* Adjust font size */
+  }
+
+  .details-container a {
+    font-size: 0.875rem; /* Adjust font size */
+  }
+}
