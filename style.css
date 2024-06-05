@@ -2,13 +2,49 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/* Default Light Mode */
+:root {
+  --primary-color: white;
+  --primary-color-2: rgb(250, 250, 250);
+  --primary-color-3: rgb(181, 181, 181);
+  --background-color: rgb(255, 255, 255);
+  --secondary-color: black;
+  --secondary-color-2: rgb(85, 85, 85);
+  --button-background: rgb(53, 53, 53);
+  --button-text-hover: grey;
+  --button-border: rgb(53, 53, 53) 0.1rem solid;
+  --button-border-2: rgb(255, 255, 255) 0.1rem solid;
+  --container-border: rgb(163, 163, 163);
+}
+
+/* Dark Mode */
+[theme="dark"] {
+  --primary-color: black;
+  --primary-color-2: rgb(39, 39, 39);
+  --primary-color-3: rgb(74, 74, 74);
+  --background-color: rgb(33, 33, 33);
+  --secondary-color: white;
+  --secondary-color-2: rgb(170, 170, 170);
+  --button-background: rgb(202, 202, 202);
+  --button-text-hover: lightgrey;
+  --button-border: rgb(202, 202, 202) 0.1rem solid;
+  --button-border-2: rgb(0, 0, 0) 0.1rem solid;
+  --container-border: rgb(92, 92, 92);
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+h3 {
+  color: var(--secondary-color);
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 html {
@@ -16,7 +52,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: var(--secondary-color-2);
 }
 
 /* TRANSITION */
@@ -31,11 +67,11 @@ a,
 nav,
 .nav-links {
   display: flex;
+  align-items: center;
 }
 
 nav {
   justify-content: space-around;
-  align-items: center;
   height: 17vh;
 }
 
@@ -45,21 +81,33 @@ nav {
   font-size: 1.5rem;
 }
 
+nav li:last-child {
+  width: max-content;
+  display: flex;
+  margin: auto;
+  padding: 10px;
+}
+
 a {
-  color: black;
+  color: var(--secondary-color);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: var(--primary-color);
 }
 
 a:hover {
-  color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: var(--secondary-color);
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  text-decoration-color: var(--secondary-color);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
 }
 
 .logo:hover {
@@ -89,19 +137,20 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
-  transition: all 0.3 ease-in-out;
+  background-color: var(--secondary-color);
+  transition: all 0.6s ease-in-out;
 }
 
 .menu-links {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: var(--primary-color);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.6s ease-in-out; /* Slower transition */
+  border-radius: 10px; /* Rounded corners */
 }
 
 .menu-links a {
@@ -109,9 +158,9 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
+  color: var(--secondary-color);
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links li {
@@ -119,7 +168,7 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 300px;
+  max-height: 3500px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -146,6 +195,7 @@ a:hover {
   transform: none;
 }
 
+
 /* SECTIONS */
 
 section {
@@ -171,8 +221,8 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 275px;
-  width: 275px;
+  height: 400px;
+  width: 400px;
   margin: auto 0;
 }
 
@@ -195,6 +245,7 @@ section {
 }
 
 .title {
+  color: var(--secondary-color);
   font-size: 3rem;
   text-align: center;
 }
@@ -231,7 +282,8 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--button-border);
+  color: var(--secondary-color-2);
 }
 
 .btn-color-1:hover,
@@ -241,12 +293,12 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+  background: var(--button-background);
+  color: var(--primary-color);
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: var(--secondary-color);
 }
 
 .btn-color-2 {
@@ -254,7 +306,8 @@ section {
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: var(--button-border);
+  background: var(--secondary-color);
 }
 
 .btn-container {
@@ -296,10 +349,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: var(--primary-color-2);
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: var(--button-border);
+  border-color: var(--container-border);
   text-align: center;
 }
 
@@ -321,7 +374,7 @@ section {
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  color: var(--secondary-color);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -357,12 +410,13 @@ article .icon {
 
 #projects {
   position: relative;
-  margin-bottom: 250px;
+  gap: 5rem;
+  height: 120vh;
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border-color: var(--container-border);
+  background: var(--primary-color-2);
 }
 
 .project-img {
@@ -373,12 +427,12 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: black;
+  color: var(--secondary-color);
 }
 
 .project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+  color: var(--secondary-color);
+  border-color: var(--container-border);
 }
 /* CERTIFICATION */
 #certifications {
@@ -392,6 +446,7 @@ article .icon {
     min-height: fit-content;  
     margin-bottom: 25px;
     margin-top: 25px;
+    
 }
 
 .certifications-container {
@@ -402,12 +457,14 @@ article .icon {
 }
 
 .details-container {
-  background: #f9f9f9;
+  border: var(--button-border);
+  border-color: var(--container-border);
+  background: var(--background-color);
   border-radius: 10px;
   padding: 20px;
   text-align: left;
   width: 250px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(73, 73, 73, 0.411);
 }
 
 .details-container img.icon {
@@ -441,9 +498,9 @@ article .icon {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  border: var(--button-border);
+  border-color: var(--container-border);
+  background: var(--background-color);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -477,89 +534,4 @@ footer {
 
 footer p {
   text-align: center;
-}
-
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-
-  #certifications {
-    padding: 20px; /* Adjust padding */
-    margin: 0; /* Remove extra margin */
-    width: 100%; /* Ensure full width */
-    box-sizing: border-box;
-  }
-
-  .certifications-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0; /* Ensure no extra padding */
-  }
-  
-  .details-container {
-    width: calc(100% - 40px); /* Full width minus padding */
-    margin: 10px 0; /* Space between cards */
-    box-sizing: border-box;
-  }
-
-  .details-container img.icon {
-    width: 40px; /* Adjust icon size */
-    height: 40px; /* Adjust icon size */
-  }
-
-  .details-container h3 {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .details-container p {
-    font-size: 1rem; /* Adjust font size */
-  }
-
-  .details-container a {
-    font-size: 1rem; /* Adjust font size */
-  }
-}
-
-/* Adjustments for even smaller screens */
-@media (max-width: 480px) {
-  
-  #certifications {
-    padding: 10px; /* Adjust padding */
-    margin: 0; /* Remove extra margin */
-    width: 100%; /* Ensure full width */
-    box-sizing: border-box;
-  }
-  
-  .certifications-container {
-    gap: 15px;
-    padding: 0; /* Ensure no extra padding */
-  }
-  
-  .details-container {
-    width: calc(100% - 20px); /* Full width minus padding */
-    margin-bottom: 15px; /* Space between cards */
-    box-sizing: border-box;
-  }
-  
-  .details-container img.icon {
-    width: 30px; /* Adjust icon size */
-    height: 30px; /* Adjust icon size */
-  }
-
-  .details-container h3 {
-    font-size: 1.25rem; /* Adjust font size */
-  }
-
-  .details-container p {
-    font-size: 0.875rem; /* Adjust font size */
-  }
-
-  .details-container a {
-    font-size: 0.875rem; /* Adjust font size */
-  }
 }
