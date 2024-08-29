@@ -40,7 +40,9 @@
 h3 {
   color: var(--secondary-color);
 }
-
+h4 {
+  color: var(--secondary-color);
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
